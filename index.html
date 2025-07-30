@@ -1,235 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hicham EL AKHAL - Portfolio</title>
-  <style>
-    /* Reset */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9; color: #222;
-      line-height: 1.6;
-    }
-    a {
-      color: #2980b9; text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hicham EL AKHAL – AI Researcher & Data Scientist</title>
+<style>
+  /* Reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    color: #222;
+    line-height: 1.6;
+  }
+  a {
+    color: #2563EB;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover {
+    color: #1D4ED8;
+  }
 
-    /* Nav */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: #fff;
-      border-bottom: 1px solid #ddd;
-      display: flex;
-      justify-content: center;
-      padding: 1rem 0;
-      z-index: 1000;
+  /* Container */
+  .container {
+    max-width: 900px;
+    margin: 120px auto 60px;
+    padding: 0 20px;
+  }
+
+  /* Navigation */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 60px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  nav a {
+    margin: 0 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding-bottom: 4px;
+    border-bottom: 3px solid transparent;
+  }
+  nav a.active,
+  nav a:hover {
+    border-color: #2563EB;
+    color: #2563EB;
+  }
+
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+  }
+  .profile-pic:hover {
+    transform: scale(1.07);
+  }
+  header h1 {
+    font-size: 3rem;
+    margin: 0 0 10px;
+    font-weight: 800;
+    color: #2563EB;
+  }
+  header p {
+    font-size: 1.25rem;
+    color: #475569;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  /* Sections */
+  section {
+    margin-bottom: 80px;
+  }
+  section h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #2563EB;
+    border-bottom: 4px solid #2563EB;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+  }
+
+  /* About */
+  #about p {
+    font-size: 1.15rem;
+    color: #334155;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* Projects */
+  .project-list {
+    list-style: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .project-list li {
+    background: #fff;
+    margin-bottom: 18px;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.08);
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .project-list li:hover {
+    box-shadow: 0 8px 20px rgb(37 99 235 / 0.3);
+  }
+  .project-list a {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #2563EB;
+  }
+
+  /* Publications */
+  .publication-list {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+  .publication-list li {
+    margin-bottom: 24px;
+    font-size: 1rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+  .publication-list li a {
+    font-weight: 700;
+    color: #2563EB;
+  }
+
+  /* Contact */
+  #contact {
+    text-align: center;
+  }
+  #contact p {
+    font-size: 1.15rem;
+    color: #334155;
+    margin: 12px 0;
+  }
+  #contact a {
+    font-weight: 700;
+    color: #2563EB;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .container {
+      margin: 100px 15px 40px;
     }
     nav a {
-      margin: 0 15px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      padding: 5px 0;
-      transition: border-bottom 0.3s;
-    }
-    nav a:hover,
-    nav a.active {
-      border-bottom: 3px solid #2980b9;
-      color: #2980b9;
-    }
-
-    /* Container */
-    .container {
-      max-width: 900px;
-      margin: 100px auto 50px;
-      padding: 0 20px;
-    }
-
-    /* Header */
-    header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    .profile-pic {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
+      margin: 0 12px;
+      font-size: 1rem;
     }
     header h1 {
-      margin: 0;
-      font-size: 2.8rem;
-      color: #2980b9;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #555;
-      margin-top: 5px;
-    }
-
-    /* Sections */
-    section {
-      margin-bottom: 60px;
+      font-size: 2.2rem;
     }
     section h2 {
-      border-bottom: 3px solid #2980b9;
-      padding-bottom: 8px;
-      color: #2980b9;
-      font-weight: 700;
-      margin-bottom: 25px;
-      font-size: 2rem;
+      font-size: 1.6rem;
     }
+  }
+</style>
 
-    /* About */
-    #about p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      color: #444;
-    }
+<!-- Google Fonts Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-    /* Projects */
-    .project-list {
-      list-style: none;
-      padding-left: 0;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .project-list li {
-      margin-bottom: 18px;
-    }
-    .project-list a {
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-
-    /* Publications */
-    .publication-list {
-      max-width: 700px;
-      margin: 0 auto;
-      padding-left: 0;
-      list-style: none;
-    }
-    .publication-list li {
-      margin-bottom: 18px;
-      font-size: 1rem;
-      color: #333;
-    }
-    .publication-list li a {
-      font-weight: 600;
-      color: #2980b9;
-    }
-
-    /* Contact */
-    #contact p {
-      text-align: center;
-      font-size: 1.1rem;
-      color: #555;
-    }
-    #contact a {
-      color: #2980b9;
-      font-weight: 600;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav a {
-        margin: 0 10px;
-        font-size: 1rem;
-      }
-      .container {
-        margin-top: 80px;
-      }
-      header h1 {
-        font-size: 2rem;
-      }
-      section h2 {
-        font-size: 1.6rem;
-      }
-    }
-  </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#publications">Publications</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+  <a href="#home" class="active">Home</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#publications">Publications</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <div class="container">
-    <section id="home">
-      <header>
-        <img src="https://via.placeholder.com/160" alt="Photo of Hicham EL AKHAL" class="profile-pic" />
-        <h1>Hicham EL AKHAL</h1>
-        <p>Researcher in Artificial Intelligence & Data Science</p>
-      </header>
-    </section>
+<div class="container">
+  <section id="home">
+    <header>
+      <img
+        src="https://via.placeholder.com/180"
+        alt="Photo of Hicham EL AKHAL"
+        class="profile-pic"
+      />
+      <h1>Hicham EL AKHAL</h1>
+      <p>AI Researcher & Data Scientist</p>
+    </header>
+  </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I am a passionate researcher focused on artificial intelligence applied to data science, especially in agricultural disease classification. My goal is to develop robust and innovative models supporting decision-making in precision agriculture.
-      </p>
-    </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a dedicated researcher specializing in artificial intelligence and data science, with a focus on innovative solutions in agricultural disease classification and precision farming. I strive to develop efficient hybrid models and AI tools that make a real-world impact.
+    </p>
+  </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul class="project-list">
-        <li><a href="#">Hybrid models for olive disease classification</a></li>
-        <li><a href="#">Adversarial data augmentation for neurodegenerative disease prediction</a></li>
-        <li><a href="#">Cloud SaaS platform for agricultural image analysis</a></li>
-      </ul>
-    </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul class="project-list">
+      <li><a href="#">Hybrid deep learning models for olive disease classification</a></li>
+      <li><a href="#">Adversarial data augmentation for neurodegenerative disease prediction</a></li>
+      <li><a href="#">Cloud SaaS platform for agricultural image analysis</a></li>
+    </ul>
+  </section>
 
-    <section id="publications">
-      <h2>Publications</h2>
-      <ul class="publication-list">
-        <li><a href="https://doi.org/10.1016/j.engappai.2024.109646" target="_blank" rel="noopener noreferrer">Positive discrimination of minority classes through data generation and distribution: A case study in olive disease classification</a> — H. El Akhal et al., Engineering Applications of Artificial Intelligence, 2025</li>
-        <li><a href="https://doi.org/10.1016/j.cose.2025.104451" target="_blank" rel="noopener noreferrer">Bayes-based word weighting for enhanced vulnerability classification in critical infrastructure systems</a> — A. B. Yahya et al., Computers & Security, 2025</li>
-        <li><a href="https://doi.org/10.1016/j.ecoinf.2023.102276" target="_blank" rel="noopener noreferrer">A novel approach for image-based olive leaf diseases classification using a deep hybrid model</a> — H. El Akhal et al., Ecological Informatics, 2023</li>
-      </ul>
-    </section>
+  <section id="publications">
+    <h2>Selected Publications</h2>
+    <ul class="publication-list">
+      <li>
+        <a href="https://doi.org/10.1016/j.engappai.2024.109646" target="_blank" rel="noopener noreferrer"
+          >Positive discrimination of minority classes through data generation and distribution: A case study in olive disease classification</a
+        > — H. El Akhal et al., Engineering Applications of Artificial Intelligence, 2025
+      </li>
+      <li>
+        <a href="https://doi.org/10.1016/j.cose.2025.104451" target="_blank" rel="noopener noreferrer"
+          >Bayes-based word weighting for enhanced vulnerability classification in critical infrastructure systems</a
+        > — A. B. Yahya et al., Computers & Security, 2025
+      </li>
+      <li>
+        <a href="https://doi.org/10.1016/j.ecoinf.2023.102276" target="_blank" rel="noopener noreferrer"
+          >A novel approach for image-based olive leaf diseases classification using a deep hybrid model</a
+        > — H. El Akhal et al., Ecological Informatics, 2023
+      </li>
+    </ul>
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>📧 <a href="mailto:hicham.elakhal@example.com">hicham.elakhal@example.com</a></p>
-      <p>🔗 <a href="https://linkedin.com/in/hichamelakhal" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-    </section>
-  </div>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📧 <a href="mailto:hicham.elakhal@example.com">hicham.elakhal@example.com</a></p>
+    <p>🔗 <a href="https://linkedin.com/in/hichamelakhal" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+  </section>
+</div>
 
-  <script>
-    // Navigation active link highlight on scroll
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("nav a");
+<script>
+  // Active nav link highlighting on scroll
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
 
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 80;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
-      });
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 70;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
     });
-  </script>
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
