@@ -1,35 +1,207 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hicham El Akhal</title>
-  <style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hicham EL AKHAL - Profil Professionnel</title>
+<style>
+  /* Reset basique */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #2c3e50;
+    margin: 0;
+    padding: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(44, 62, 80, 0.25);
+    border: 5px solid #2980b9;
+    margin: 0 auto 20px auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(41, 128, 185, 0.5);
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin: 0 0 8px;
+    font-weight: 700;
+    color: #2980b9;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin: 0 0 10px;
+    color: #34495e;
+  }
+
+  .contact-info {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+  }
+
+  .contact-info a {
+    color: #2980b9;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-info a:hover {
+    color: #1f4f7a;
+  }
+
+  nav {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  nav a {
+    color: #2980b9;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #1f4f7a;
+  }
+
+  section {
+    margin-bottom: 50px;
+  }
+
+  section h3 {
+    font-weight: 700;
+    color: #2980b9;
+    border-bottom: 3px solid #2980b9;
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+  }
+
+  /* News */
+  .news-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  .news-list li {
+    margin-bottom: 14px;
+    font-size: 1.05rem;
+  }
+  .news-date {
+    font-weight: 700;
+    color: #1f4f7a;
+    margin-right: 10px;
+    min-width: 90px;
+    display: inline-block;
+    font-family: monospace;
+  }
+
+  /* Publications */
+  .pub {
+    margin-bottom: 28px;
+  }
+  .pub-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 4px;
+  }
+  .pub-authors {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 4px;
+  }
+  .pub-venue {
+    font-weight: 600;
+    color: #2980b9;
+    margin-bottom: 3px;
+  }
+  .pub-note {
+    color: #777;
+    font-size: 0.9rem;
+    font-style: normal;
+  }
+
+  @media (max-width: 600px) {
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f2f2f2;
-      color: #333;
+      padding: 15px;
     }
-    h1 {
-      color: #2c3e50;
+    .news-date {
+      min-width: 70px;
     }
-    .card {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-      max-width: 700px;
-      margin: auto;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <div class="card">
-    <h1>Bienvenue !</h1>
-    <p>Je suis <strong>Hicham El Akhal</strong>, doctorant en Intelligence Artificielle et Vision par Ordinateur.</p>
-    <p>📍 Maroc | ✉️ hicham.elakhal@example.com</p>
-    <p>Ce site est en construction. Revenez bientôt !</p>
+
+<header>
+  <img src="https://via.placeholder.com/180" alt="Photo professionnelle de Hicham EL AKHAL" class="profile-photo" />
+  <h1>Hicham EL AKHAL</h1>
+  <h2>Chercheur en Intelligence Artificielle & Sciences des Données</h2>
+  <div class="contact-info">
+    📧 <a href="mailto:hicham.elakhal@example.com">hicham.elakhal@example.com</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
+    🔗 <a href="https://linkedin.com/in/hichamelakhal" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   </div>
+</header>
+
+<nav>
+  <a href="#news">Actualités</a>
+  <a href="#publications">Publications</a>
+</nav>
+
+<section id="news">
+  <h3>Actualités</h3>
+  <ul class="news-list">
+    <li><span class="news-date">[Mai 2025]</span> Un article accepté à MICCAI 2025 (acceptation précoce, top 9%).</li>
+    <li><span class="news-date">[Avr. 2025]</span> Un résumé sur la génération de données longitudinales accepté à AAIC 2025.</li>
+    <li><span class="news-date">[Jan. 2025]</span> Présentation Spotlight sélectionnée à ICLR 2025 (taux d'acceptation : 5.1%).</li>
+    <li><span class="news-date">[Jan. 2025]</span> Lauréat du Best Paper Award de l’École Doctorale d’IA, POSTECH.</li>
+    <!-- Ajoute ici tes actualités -->
+  </ul>
+</section>
+
+<section id="publications">
+  <h3>Publications Sélectionnées</h3>
+  <p>Consultez la liste complète des publications dans mon CV !</p>
+
+  <div class="pub">
+    <div class="pub-title">Adaptive Adversarial Data Augmentation with Trajectory Constraint for Alzheimer's Disease Conversion Prediction</div>
+    <div class="pub-authors">Hyuna Cho, Hayoung Ahn, Guorong Wu, Won Hwa Kim</div>
+    <div class="pub-venue">International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI), 2025</div>
+    <div class="pub-note">[Accepté tôt, taux d'acceptation : 9%]</div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-title">Conditional Diffusion with Ordinal Regression: Longitudinal Data Generation for Neurodegenerative Disease Studies</div>
+    <div class="pub-authors">Hyuna Cho, Ziquan Wei, Seungjoo Lee, Tingting Dan, Guorong Wu, Won Hwa Kim</div>
+    <div class="pub-venue">International Conference on Learning Representations (ICLR), 2025</div>
+    <div class="pub-note">[Spotlight, taux d'acceptation : 5.1%]</div>
+  </div>
+
+  <!-- Ajoute ici tes publications -->
+</section>
+
 </body>
 </html>
