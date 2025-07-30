@@ -1,254 +1,235 @@
 <!DOCTYPE html>
-<html lang="fr"> 
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hicham EL AKHAL - Profil Professionnel</title>
-<style>
-  /* Reset basique */
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f7fa;
-    color: #2c3e50;
-    margin: 0;
-    padding: 20px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  header {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-
-  .profile-photo {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 8px 20px rgba(44, 62, 80, 0.25);
-    border: 5px solid #2980b9;
-    margin: 0 auto 20px auto;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-  .profile-photo:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(41, 128, 185, 0.5);
-  }
-
-  h1 {
-    font-size: 3rem;
-    margin: 0 0 8px;
-    font-weight: 700;
-    color: #2980b9;
-  }
-
-  h2 {
-    font-weight: 400;
-    font-size: 1.3rem;
-    margin: 0 0 10px;
-    color: #34495e;
-  }
-
-  .contact-info {
-    font-size: 1rem;
-    color: #7f8c8d;
-    margin-bottom: 40px;
-  }
-
-  .contact-info a {
-    color: #2980b9;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .contact-info a:hover {
-    color: #1f4f7a;
-  }
-
-  nav {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  nav a {
-    color: #2980b9;
-    font-weight: 600;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.1rem;
-    transition: color 0.3s;
-  }
-  nav a:hover {
-    color: #1f4f7a;
-  }
-
-  section {
-    margin-bottom: 50px;
-  }
-
-  section h3 {
-    font-weight: 700;
-    color: #2980b9;
-    border-bottom: 3px solid #2980b9;
-    padding-bottom: 8px;
-    margin-bottom: 25px;
-    font-size: 1.8rem;
-  }
-
-  /* News */
-  .news-list {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  .news-list li {
-    margin-bottom: 14px;
-    font-size: 1.05rem;
-  }
-  .news-date {
-    font-weight: 700;
-    color: #1f4f7a;
-    margin-right: 10px;
-    min-width: 90px;
-    display: inline-block;
-    font-family: monospace;
-  }
-
-  /* Publications */
-  .pub {
-    margin-bottom: 28px;
-  }
-  .pub-title {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: #2c3e50;
-    margin-bottom: 4px;
-  }
-  .pub-authors {
-    font-style: italic;
-    color: #555;
-    margin-bottom: 4px;
-  }
-  .pub-venue {
-    font-weight: 600;
-    color: #2980b9;
-    margin-bottom: 3px;
-  }
-  .pub-note {
-    color: #777;
-    font-size: 0.9rem;
-    font-style: normal;
-  }
-
-  @media (max-width: 600px) {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hicham EL AKHAL - Portfolio</title>
+  <style>
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     body {
-      padding: 15px;
+      margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9; color: #222;
+      line-height: 1.6;
     }
-    .news-date {
-      min-width: 70px;
+    a {
+      color: #2980b9; text-decoration: none;
     }
-  }
-</style>
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Nav */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 15px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 5px 0;
+      transition: border-bottom 0.3s;
+    }
+    nav a:hover,
+    nav a.active {
+      border-bottom: 3px solid #2980b9;
+      color: #2980b9;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 100px auto 50px;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      color: #2980b9;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-top: 5px;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 60px;
+    }
+    section h2 {
+      border-bottom: 3px solid #2980b9;
+      padding-bottom: 8px;
+      color: #2980b9;
+      font-weight: 700;
+      margin-bottom: 25px;
+      font-size: 2rem;
+    }
+
+    /* About */
+    #about p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    /* Projects */
+    .project-list {
+      list-style: none;
+      padding-left: 0;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .project-list li {
+      margin-bottom: 18px;
+    }
+    .project-list a {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* Publications */
+    .publication-list {
+      max-width: 700px;
+      margin: 0 auto;
+      padding-left: 0;
+      list-style: none;
+    }
+    .publication-list li {
+      margin-bottom: 18px;
+      font-size: 1rem;
+      color: #333;
+    }
+    .publication-list li a {
+      font-weight: 600;
+      color: #2980b9;
+    }
+
+    /* Contact */
+    #contact p {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    #contact a {
+      color: #2980b9;
+      font-weight: 600;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav a {
+        margin: 0 10px;
+        font-size: 1rem;
+      }
+      .container {
+        margin-top: 80px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      section h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <img src="https://via.placeholder.com/180" alt="Photo professionnelle de Hicham EL AKHAL" class="profile-photo" />
-  <h1>Hicham EL AKHAL</h1>
-  <h2>Chercheur en Intelligence Artificielle & Sciences des Données</h2>
-  <div class="contact-info">
-    📧 <a href="mailto:hicham.elakhal@example.com">hicham.elakhal@example.com</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
-    🔗 <a href="https://linkedin.com/in/hichamelakhal" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-  </div>
-</header>
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<nav>
-  <a href="#news">Actualités</a>
-  <a href="#publications">Publications</a>
-</nav>
+  <div class="container">
+    <section id="home">
+      <header>
+        <img src="https://via.placeholder.com/160" alt="Photo of Hicham EL AKHAL" class="profile-pic" />
+        <h1>Hicham EL AKHAL</h1>
+        <p>Researcher in Artificial Intelligence & Data Science</p>
+      </header>
+    </section>
 
-<section id="news">
-  <h3>Actualités</h3>
-  <ul class="news-list">
-    <li><span class="news-date">[Mai 2025]</span> Un article accepté à MICCAI 2025 (acceptation précoce, top 9%).</li>
-    <li><span class="news-date">[Avr. 2025]</span> Un résumé sur la génération de données longitudinales accepté à AAIC 2025.</li>
-    <li><span class="news-date">[Jan. 2025]</span> Présentation Spotlight sélectionnée à ICLR 2025 (taux d'acceptation : 5.1%).</li>
-    <li><span class="news-date">[Jan. 2025]</span> Lauréat du Best Paper Award de l’École Doctorale d’IA, POSTECH.</li>
-  </ul>
-</section>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am a passionate researcher focused on artificial intelligence applied to data science, especially in agricultural disease classification. My goal is to develop robust and innovative models supporting decision-making in precision agriculture.
+      </p>
+    </section>
 
-<section id="publications">
-  <h3>Publications Scientifiques</h3>
-  <h4>Articles de Revues</h4>
-  
-  <div class="pub">
-    <div class="pub-title">Positive discrimination of minority classes through data generation and distribution: A case study in olive disease classification</div>
-    <div class="pub-authors">H. El Akhal, A. B. Yahya, and A. E. B. El Alaoui</div>
-    <div class="pub-venue">Engineering Applications of Artificial Intelligence, vol. 139, p. 109646, 2025</div>
-    <div class="pub-note">SJR=1.75, IF=7.5, Q1. DOI: <a href="https://doi.org/10.1016/j.engappai.2024.109646" target="_blank" rel="noopener noreferrer">10.1016/j.engappai.2024.109646</a></div>
-  </div>
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        <li><a href="#">Hybrid models for olive disease classification</a></li>
+        <li><a href="#">Adversarial data augmentation for neurodegenerative disease prediction</a></li>
+        <li><a href="#">Cloud SaaS platform for agricultural image analysis</a></li>
+      </ul>
+    </section>
 
-  <div class="pub">
-    <div class="pub-title">Bayes-based word weighting for enhanced vulnerability classification in critical infrastructure systems</div>
-    <div class="pub-authors">A. B. Yahya, H. El Akhal, A. E. B. El Alaoui, et al.</div>
-    <div class="pub-venue">Computers & Security, p. 104451, 2025</div>
-    <div class="pub-note">SJR=1.57, IF=4.8, Q1. DOI: <a href="https://doi.org/10.1016/j.cose.2025.104451" target="_blank" rel="noopener noreferrer">10.1016/j.cose.2025.104451</a></div>
-  </div>
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul class="publication-list">
+        <li><a href="https://doi.org/10.1016/j.engappai.2024.109646" target="_blank" rel="noopener noreferrer">Positive discrimination of minority classes through data generation and distribution: A case study in olive disease classification</a> — H. El Akhal et al., Engineering Applications of Artificial Intelligence, 2025</li>
+        <li><a href="https://doi.org/10.1016/j.cose.2025.104451" target="_blank" rel="noopener noreferrer">Bayes-based word weighting for enhanced vulnerability classification in critical infrastructure systems</a> — A. B. Yahya et al., Computers & Security, 2025</li>
+        <li><a href="https://doi.org/10.1016/j.ecoinf.2023.102276" target="_blank" rel="noopener noreferrer">A novel approach for image-based olive leaf diseases classification using a deep hybrid model</a> — H. El Akhal et al., Ecological Informatics, 2023</li>
+      </ul>
+    </section>
 
-  <div class="pub">
-    <div class="pub-title">A novel approach for image-based olive leaf diseases classification using a deep hybrid model</div>
-    <div class="pub-authors">H. El Akhal, A. B. Yahya, N. Moussa, and A. E. B. El Alaoui</div>
-    <div class="pub-venue">Ecological Informatics, vol. 77, p. 102276, 2023</div>
-    <div class="pub-note">SJR=1.1, IF=5.9, Q1. DOI: <a href="https://doi.org/10.1016/j.ecoinf.2023.102276" target="_blank" rel="noopener noreferrer">10.1016/j.ecoinf.2023.102276</a></div>
-  </div>
-
-  <h4>Actes de Conférences</h4>
-  
-  <div class="pub">
-    <div class="pub-title">Deep learning vs deep hybrid models: A performance evaluation for olive diseases image classification</div>
-    <div class="pub-authors">H. El Akhal, A. Ben Yahya, and A. El Belrhiti El Alaoui</div>
-    <div class="pub-venue">Statistical Methods for Data Analysis and Decision Sciences (SDS 2025), Springer Nature Switzerland AG, Milan, Italy, 2025 (À paraître)</div>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>📧 <a href="mailto:hicham.elakhal@example.com">hicham.elakhal@example.com</a></p>
+      <p>🔗 <a href="https://linkedin.com/in/hichamelakhal" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    </section>
   </div>
 
-  <div class="pub">
-    <div class="pub-title">The impact of data balancing through data generation techniques on improving deep learning model performance: A case study on olive tree disease classification</div>
-    <div class="pub-authors">H. El Akhal, A. Ben Yahya, and A. El Belrhiti El Alaoui</div>
-    <div class="pub-venue">Innovative Approaches and Applications for Sustainable Development, Springer Nature Switzerland AG, Meknes, Morocco, 2025 (À paraître)</div>
-  </div>
+  <script>
+    // Navigation active link highlight on scroll
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
 
-  <div class="pub">
-    <div class="pub-title">Enhanced classification of embedded system vulnerabilities using ensemble embedding and bilstm networks</div>
-    <div class="pub-authors">A. B. Yahya, H. El Akhal, and A. El Belrhiti El Alaoui</div>
-    <div class="pub-venue">International Database Engineered Applications Symposium, Springer, 2024, pp. 35–48</div>
-    <div class="pub-note">DOI: <a href="https://doi.org/10.1007/978-3-031-83472-1_3" target="_blank" rel="noopener noreferrer">10.1007/978-3-031-83472-1_3</a></div>
-  </div>
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 80;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
 
-  <div class="pub">
-    <div class="pub-title">Image-based olive disease classification using deep transfer learning</div>
-    <div class="pub-authors">H. El Akhal, A. Ben Yahya, and A. El Belrhiti El Alaoui</div>
-    <div class="pub-venue">ICCSRE 2022, Agadir, 2022 (À paraître)</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">A Comparison of Quantization Techniques for Mobile Olive Disease Detection</div>
-    <div class="pub-authors">S. Chouchf, H. El Akhal, W. Zarrik, and A. El Belrhiti El Alaoui</div>
-    <div class="pub-venue">IRASET 2025, FES, 2025</div>
-    <div class="pub-note">DOI: <a href="https://doi.org/10.1109/IRASET64571.2025.11008013" target="_blank" rel="noopener noreferrer">10.1109/IRASET64571.2025.11008013</a></div>
-  </div>
-
-  <h4>Livres et Chapitres</h4>
-
-  <div class="pub">
-    <div class="pub-title">Machine learning-based collection and analysis of embedded systems vulnerabilities</div>
-    <div class="pub-authors">A. B. Yahya, H. El Akhal, and A. E. B. El Alaoui</div>
-    <div class="pub-venue">In *Enhancing Performance, Efficiency, and Security Through Complex Systems Control*, IGI Global Scientific Publishing, 2024, pp. 242–261</div>
-    <div class="pub-note">DOI: <a href="https://doi.org/10.4018/979-8-3693-0497-6.ch014" target="_blank" rel="noopener noreferrer">10.4018/979-8-3693-0497-6.ch014</a></div>
-  </div>
-</section>
-
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
